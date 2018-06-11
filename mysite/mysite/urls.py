@@ -15,7 +15,22 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.urls import include, path 
 
+
+#path()argument contains 2 required parameters and 2 optional: 
+#1st 'route': a string that contains a URL pattern that when requested,
+#is searched for in the urlpatterns list
+#2nd 'view': when mathc route match is found, Django calls specified 
+#view function, ex. views.whatever 
+#3rd 'kwargs': arbitrary keyword arguments can be passed to dictionary
+#to target the view 
+#4th 'name': name your url, allowing you to access/refer to it with 
+#this title/label  
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+	
+
+	path('polls/', include('polls.urls')),
+    path('admin/', admin.site.urls),
+    #url(r'^admin/', admin.site.urls),
 ]
