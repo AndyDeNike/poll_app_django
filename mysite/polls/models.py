@@ -14,14 +14,15 @@ from django.db import models
 
 class Question(models.Model):
 	# The name of each Field instance (eg question_text/pub_date) is the
-	# fields name in machine-readable code (used for Python/database code)
+	# fields name in machine-readable code (used for Python code/database 
+	# column name)
 
 	# some Field classes have required arguments, such as CharField
 	# with max_length
 
 	question_text = models.CharField(max_length=200)
 	# Optional first argument can represent human readable name for Field
-	# if arugment not given, class var name is default 
+	# if arugment not given, Field instance name is default 
 	pub_date = models.DateTimeField('date published')
 
 class Choice(models.Model):
