@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Allows for migration of apps that you want to include in project 
 
 INSTALLED_APPS = [
+    # PollsConfig class is in polls/apps.py so dotted path is:
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
