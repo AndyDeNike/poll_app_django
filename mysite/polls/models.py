@@ -44,6 +44,7 @@ class Choice(models.Model):
 	# optional argument default is set to 0 for votes 
 	votes = models.IntegerField(default=0)
 
+	#creates human readable string of text
 	def __str__(self):
 		return self.choice_text
 
