@@ -32,5 +32,5 @@ urlpatterns = [
 
 	path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
-    #url(r'^admin/', admin.site.urls),
+    #not sure what this is for: url(r'^admin/', admin.site.urls),
 ]
