@@ -12,6 +12,8 @@ from . import views
 #4th 'name': name your url, allowing you to access/refer to it with 
 #this title/label 
 
+
+app_name = 'polls'
 urlpatterns = [
 	# ex: /polls/
     path('', views.index, name='index'),
