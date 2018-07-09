@@ -32,6 +32,7 @@ class ResultView(generic.DetailView):
 
 def vote(request, question_id):
 	pass #same as above, no changes needed. 
+	#added this comment for git test
 		
 """
 def index(request):
