@@ -10,10 +10,10 @@ from django.template import loader
 from django.urls import reverse 
 from django.views import generic 
 
-from .models import Question
+from .models import Choice, Question
 
 # Create your views here.
-
+'''
 class IndexView(generic.ListView):
 	template_name = 'polls/index.html'
 	context_object_name = 'latest_question_list'
@@ -33,8 +33,9 @@ class ResultView(generic.DetailView):
 def vote(request, question_id):
 	pass #same as above, no changes needed. 
 	#added this comment for git test
+'''
 		
-"""
+
 def index(request):
 	#return HttpResponse("Hello, world.  You're at the polls index.")
 	latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -57,7 +58,8 @@ def detail(request, question_id):
 		#question = Question.objects.get(pk=question_id)
 	#except Question.DoesNotExist:
 		#raise Http404("Question does not exist")
-	question = get_object_or_404(Question, pk=question_id)	
+	question = get_object_or_404(Question, pk=question_id)
+	#this sends the params {'q':q} to detail.html to be used as a variable	
 	return render(request, 'polls/detail.html', {'question': question})
 
 	#return HttpResponse("You're looking at question %s." % question_id)
@@ -86,4 +88,3 @@ def vote(request, question_id):
 		# user hits the Back button.
 		return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 	#return HttpResponse("You're voting on question %s." % question_id)
-"""
