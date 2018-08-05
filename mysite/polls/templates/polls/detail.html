@@ -2,9 +2,12 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
+<!--setting method to 'post' as it will alter data server-side-->
 <form action="{% url 'polls:vote' question.id %}" method="post">
+<!--csrf_token prevents against Cross Site Request Forgeries for POST forms-->
 {% csrf_token %}
 {% for choice in question.choice_set.all %}
+	<!--when radio button is selected and form is submitted, POST data will be sent to choice=# where # is the ID of selected choice-->
 	<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
 	<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
 {% endfor %}
