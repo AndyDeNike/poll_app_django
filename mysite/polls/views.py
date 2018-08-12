@@ -12,6 +12,8 @@ from django.views import generic
 
 from .models import Choice, Question
 
+from django.utils import timezone
+
 # Create your views here.
 
 class IndexView(generic.ListView):
