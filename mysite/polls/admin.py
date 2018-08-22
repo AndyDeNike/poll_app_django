@@ -23,7 +23,11 @@ class QuestionAdmin(admin.ModelAdmin):
 	]
 	inlines = [ChoiceInline]
 	list_display = ('question_text', 'pub_date', 'was_published_recently')
+	#because 'pub_date' is DateTimeField, django filters by multiple date options
 	list_filter = ['pub_date']
+	#creates search box
+	search_fields = ['question_text']
+
 	#fields = ['pub_date', 'question_text']
 
 admin.site.register(Question, QuestionAdmin)
